@@ -5,26 +5,32 @@ date: "1/19/2022"
 output: word_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r echo = FALSE, results=FALSE}
+# power calculations for 3000 observations
+# linear regression with 20 variables in the model
+library(pwr)
+# small effect size
+pwr.f2.test(u = 20, v = 2797, sig.level = .20, power = .8)
+# 80% power to detect an effect size of .005 with 20
+# coefficients and a sample size of 3000
+
+pwr.f2.test(u = 20, v = 2797, sig.level = .05, power = .95)
+# 95% power to detect an effect size of .01 with 20
+# coefficients and a sample size of 3000
+
+# small effect size
+pwr.f2.test(u = 20, sig.level = .001, f2 = .02, power = .95)
+# 95% power to detect a small effect size with 20
+# coefficients and a sample size of 2443
+
+# medium effect size
+pwr.f2.test(u = 20, v = 2979, f2 = .15)
+# 100% power to detect 
+
+# large effect size
+pwr.f2.test(u = 20, v = 2979, f2 = .35)
+# 100% power to detect 
+
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+For a linear regression model with 20 coefficients and 3,000 observations we have 80% power to detect a very small effect size of .005 and 95% power to detect a small effect size of .01.
