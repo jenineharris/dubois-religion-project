@@ -3,6 +3,7 @@ title: "methods"
 author: "Jenine Harris"
 date: "1/19/2022"
 output: word_document
+bibliography: references.bib
 ---
 
 ```{r echo = FALSE, results=FALSE}
@@ -17,20 +18,8 @@ pwr.f2.test(u = 20, v = 2797, sig.level = .20, power = .8)
 pwr.f2.test(u = 20, v = 2797, sig.level = .05, power = .95)
 # 95% power to detect an effect size of .01 with 20
 # coefficients and a sample size of 3000
-
-# small effect size
-pwr.f2.test(u = 20, sig.level = .001, f2 = .02, power = .95)
-# 95% power to detect a small effect size with 20
-# coefficients and a sample size of 2443
-
-# medium effect size
-pwr.f2.test(u = 20, v = 2979, f2 = .15)
-# 100% power to detect 
-
-# large effect size
-pwr.f2.test(u = 20, v = 2979, f2 = .35)
-# 100% power to detect 
-
 ```
 
-For a linear regression model with 20 coefficients and 3,000 observations we have 80% power to detect a very small effect size of .005 and 95% power to detect a small effect size of .01.
+### Power calculation
+
+For a linear regression model with 20 coefficients and 3,000 observations we have 80% power to detect a very small effect size of .005 and 95% power to detect a very small effect size of .01.[@cohen2013][@champely2020]
