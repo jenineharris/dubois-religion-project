@@ -34,5 +34,8 @@ Given the novel nature of our project, we will conduct thorough exploratory data
 
 #### Mediation and moderation analyses
 
-We will use a hierarchical linear modeling strategy. For each outcome variable, we will start with a simple linear model including only religiosity. For Model 2 (a & b), we will add control demographic and socioeconomic characteristics that have some relationship to the outcome (i.e., religious affiliation, sex, education, income) and examine the change in the relationship of interest and in model fit. Model 3 (a & b) will test whether trust in medicine mediates the relationship between religiosity and each outcome. Model 4 (a & b) will determine whether knowledge of genetics, age, and rurality moderate the relationship between religiosity and concern and support for genomics and genomic healthcare. If mediation is confirmed in Model 3, Model 4 will be a moderated mediation model. If mediation is not confirmed, trust in medicine will remain in the model as a control variable while moderation is tested. 
+For each outcome variable, we will start (Model 1) with a simple linear model including only religiosity. For Model 2, we will add control demographic and socioeconomic characteristics (i.e., religious affiliation, sex, education, income) and examine the change in the relationship of interest and in model fit. Model 3 will test whether trust in medicine mediates the relationship between religiosity and the outcome. Model 4 will determine whether knowledge of genetics, age, and rurality moderate the relationship between religiosity and concern and support for genomics and genomic healthcare. If mediation is confirmed in Model 3, Model 4 will test a moderated mediation model. If we do not confirm mediation in Model 3, trust in medicine will remain in the model as a covariate while we test a moderation model for Model 4.
+ 
+
+
 
