@@ -28,13 +28,11 @@ For a linear regression model with 20 coefficients and 3,000 observations we hav
 
 #### Exploratory data analysis
 
-[do we need text about making the scale scores?]
-
-Given the novel nature of our project, we will conduct thorough exploratory data analysis (EDA) and visualization, with a particularly thorough exploratory focus on religious subgroups that are likely to be smaller in sample size (e.g., Jewish religion, Islamic religion). EDA will include appropriate descriptive statistics for all variables of interest and additional bivariate descriptive statistics and visualization examining the distribution of outcome scale scores by religious affiliation and religiosity.
+Given the novel nature of our project, we will conduct thorough exploratory data analysis (EDA) and visualization, with a particularly thorough exploratory focus on religious subgroups that are likely to be smaller in sample size (e.g., Jewish religion, Islamic religion). EDA will include appropriate descriptive statistics for all variables of interest and additional bivariate descriptive statistics and visualization examining the distribution of outcome scale scores by religious affiliation and religious portrait variables.
 
 #### Mediation and moderation analyses
 
-For each outcome variable, we will start (Model 1) with a simple linear model including only religiosity. For Model 2, we will add control demographic and socioeconomic characteristics (i.e., religious affiliation, sex, education, income) and examine the change in the relationship of interest and in model fit. Model 3 will test whether trust in medicine mediates the relationship between religiosity and the outcome. Model 4 will determine whether knowledge of genetics, age, and rurality moderate the relationship between religiosity and concern and support for genomics and genomic healthcare. If mediation is confirmed in Model 3, Model 4 will test a moderated mediation model. If we do not confirm mediation in Model 3, trust in medicine will remain in the model as a covariate while we test a moderation model for Model 4.
+We plan to examine For each outcome variable, we will start (Model 1) with a simple linear model including only religious portrait variables. For Model 2, we will add control demographic and socioeconomic characteristics (i.e., religious affiliation, sex, education, income) and examine the change in the relationship of interest and in model fit. Model 3 will test whether trust in medicine mediates the relationship between religiosity and the outcome. Model 4 will determine whether knowledge of genetics, age, and rurality moderate the relationship between religiosity and concern and support for genomics and genomic healthcare. If mediation is confirmed in Model 3, Model 4 will test a moderated mediation model. If we do not confirm mediation in Model 3, trust in medicine will remain in the model as a covariate while we test a moderation model for Model 4.
  
 
 
