@@ -6,50 +6,28 @@ output: word_document
 bibliography: references.bib
 ---
 
-## Cluster analysis approach
+[text on creating the portrait scale vars here?]
 
-##### 1) EDA descriptive and viz overall and within each religious affilitation
+Our analysis plan follows five steps: (1) exploratory data analysis, (2) cluster analysis of religious portrait variables, (3) descriptive analysis of cluster members, (4) linear regression modeling of the relationships between clusters and five outcomes, (5) mediation analysis of trust in medicine in each regression model, and (6) moderation analysis of knowledge of genetics, age, and rural residence in each regression. With a sample size of approximately 3,000 we will have 99.9% power ($\alpha$ = .001) to detect a small effect size in a linear regression model with up to 20 coefficients [@webpower].
 
-Given the novel nature of our project, we will conduct thorough exploratory data analysis (EDA) and visualization, with an added focus on religious subgroups (e.g., Jewish religion, Islamic religion). EDA will include univariate statistics and visualization for all variables and bivariate examination of portrait and outcome variables by religious affiliation.
+*Exploratory data analysis.* Given the lack of prior research on this topic, we will conduct thorough exploratory data analysis (EDA) and visualization including examining outcome and portrait variables by religious affiliation subgroups.
 
-##### 2) Develop clusters of portrait vars
+*Cluster analysis and description.* We will examine relationships among the portrait variables using scatterplots and correlation coefficients to gain an understanding of possible clusters containing portrait variables that are strongly correlated. We will use *fuzzy clustering*, a version of cluster analysis that indicates cluster membership along a 0 to 1 continuum rather than giving an absolute group assignment for each observation [@ferraro2021].
 
-##### 3) Describe who is in each cluster (demos + relig affil)
+*Cluster descriptions.* Following DuBois et al. [@DuBois2019a] we will examine the demographic characteristics and religious affiliation of participants in each cluster to determine any patterns.
 
-Following DuBois et al. [@DuBois2019a]
+*Regression modeling.* We will use cluster membership as the independent predictor in a linear regression model explaining each of the outcome variables (Model 1).
 
-##### 4) Regression models where clusters predict outcomes (5 outcomes, 1 per outcome)
+*Testing mediation.* Model 2 will test whether trust in medicine mediates the relationship between the clusters and the outcome.
 
-##### 5) Test mediation of clusters by trust in medicine
+*Testing moderation.* Model 3 will determine whether knowledge of genetics, age, and rurality moderate the relationship between the religious portrait variables and concern and support for genomics and genomic healthcare. If mediation is confirmed in Model 2, Model 3 will test a moderated mediation model. If we do not confirm mediation in Model 2, trust in medicine will remain in the model as a covariate while we test a moderation model for Model 3.
 
-##### 5) Test moderation of clusters by genetics knowledge, age, and rurality
-
-### EDA
-
-### Developing a religious portrait typology
-
-We will use a k-means clustering algorithm to identify clusters of observations based on religious portrait scores and religious affiliation.
-
-### Describing who is in each cluster
-
-### Modeling outcomes by cluster
+*Reproducible research and open science.* Ensuring research results are reproducible and scientific information is freely available are two strategies to improve research quality [@Harris2018] and reach . We will ensure our work is reproducible by including all relevant items from the CROSS survey checklist [@sharma2021consensus] and all relevant methods detail described by Harris et al. (2018) in all publications, by using publicly available software to conduct data management and analyses, and by sharing the data and statistical code used in all dissemination in a free open access repository such as GitHub [@Harris2018]. All manuscripts published will be open access to improve equity of access to our findings.
 
 ```{r echo = FALSE, results=FALSE}
-# power calculations for 3000 observations
-# linear regression with 20 variables in the model
-library(pwr)
-# small effect size
-pwr.f2.test(u = 20, f2 = .2, sig.level = .20, power = .8)
-# 80% power to detect an effect size of .1 with 20
-# coefficients and a sample size of 150
-
-pwr.f2.test(u = 20, f2 = .2, sig.level = .05, power = .95)
-# 95% power to detect an effect size of .23 with 20
-# coefficients and a sample size of 150
-
-
-WebPower::wp.regression(p1 = 5, p2 = 0, f2 = .02, alpha = .05,
-  power = .95)
+# linear regression
+WebPower::wp.regression(p1 = 20, p2 = 0, n = 3000, alpha = .001,
+  power = .999)
 
 ```
 
@@ -61,4 +39,4 @@ For a linear regression model with 20 coefficients and 3,000 observations we hav
 
 #### Exploratory data analysis
 
-Given the novel nature of our project, we will conduct thorough exploratory data analysis (EDA) and visualization, with a particularly thorough focus on religious subgroups (e.g., Jewish religion, Islamic religion). EDA will include appropriate descriptive statistics for all variables of interest and additional bivariate descriptive statistics and visualization examining the distribution of outcome scale scores by religious affiliation and religious portrait variables. Based on these analyses, we may combine data from religious affiliation group that share similar outcome variable distributions. Once we have identified groups of religious affiliations, for each group we will conduct bivariate inferential tests for each outcome with each religious portrait variable. Given the large number of bivariate tests, we will set two criteria in order for a religious portrait variable to be retained for inclusion in the model: (1) alpha is less than .001, and (2) the effect size of the relationship is moderate or better. Those religious portrait variables that meet these two criteria will be included in the mediation and moderation modeling. For each religious affiliation group we will follow a model process that starts (Model 1) with a simple linear model including those religious portrait variables that meet the two criteria. For Model 2, we will add control demographic and socioeconomic characteristics (i.e., sex, education, income) and examine the change in the relationship of interest and in model fit. Model 3 will test whether trust in medicine mediates the relationship between the religious portrait variables and the outcome. Model 4 will determine whether knowledge of genetics, age, and rurality moderate the relationship between the religious portrait variables and concern and support for genomics and genomic healthcare. If mediation is confirmed in Model 3, Model 4 will test a moderated mediation model. If we do not confirm mediation in Model 3, trust in medicine will remain in the model as a covariate while we test a moderation model for Model 4. We will collect a minimum of 150 observations for each religious affiliation group in order to have ample power to test models 1 to 4 for any affiliation alone if needed. Using the Cohen's D cutoff of .20 as a small effect size and a conservative estimate of 20 coefficients in a model, we'd have 95% power with $\alpha$ of .05 at a sample size of 149 based on calculations using the `pwr` package in R version 4.1.1.
+Given the novel nature of our project, we will conduct thorough exploratory data analysis (EDA) and visualization, with a particularly thorough focus on religious subgroups (e.g., Jewish religion, Islamic religion). EDA will include appropriate descriptive statistics for all variables of interest and additional bivariate descriptive statistics and visualization examining the distribution of outcome scale scores by religious affiliation and religious portrait variables. Based on these analyses, we may combine data from religious affiliation group that share similar outcome variable distributions. Once we have identified groups of religious affiliations, for each group we will conduct bivariate inferential tests for each outcome with each religious portrait variable. Given the large number of bivariate tests, we will set two criteria in order for a religious portrait variable to be retained for inclusion in the model: (1) alpha is less than .001, and (2) the effect size of the relationship is moderate or better. Those religious portrait variables that meet these two criteria will be included in the mediation and moderation modeling. For each religious affiliation group we will follow a model process that starts (Model 1) with a simple linear model including those religious portrait variables that meet the two criteria. For Model 2, we will add control demographic and socioeconomic characteristics (i.e., sex, education, income) and examine the change in the relationship of interest and in model fit. We will collect a minimum of 150 observations for each religious affiliation group in order to have ample power to test models 1 to 4 for any affiliation alone if needed. Using the Cohen's D cutoff of .20 as a small effect size and a conservative estimate of 20 coefficients in a model, we'd have 95% power with $\alpha$ of .05 at a sample size of 149 based on calculations using the `pwr` package in R version 4.1.1.
