@@ -22,7 +22,7 @@ Our analysis plan follows five steps: (1) exploratory data analysis, (2) cluster
 
 *Testing moderation.* Model 3 will determine whether knowledge of genetics, age, and rurality moderate the relationship between the religious portrait variables and concern and support for genomics and genomic healthcare. If mediation is confirmed in Model 2, Model 3 will test a moderated mediation model. If we do not confirm mediation in Model 2, trust in medicine will remain in the model as a covariate while we test a moderation model for Model 3.
 
-*Reproducible research and open science.* Ensuring research results are reproducible and scientific information is freely available are two strategies to improve research quality [@Harris2018] and reach . We will ensure our work is reproducible by including all relevant items from the CROSS survey checklist [@sharma2021consensus] and all relevant methods detail described by Harris et al. (2018) in all publications, by using publicly available software to conduct data management and analyses, and by sharing the data and statistical code used in all dissemination in a free open access repository such as GitHub [@Harris2018]. All manuscripts published will be open access to improve equity of access to our findings.
+*Reproducible research and open science.* Ensuring research results are reproducible and scientific information is freely available are two strategies to improve research quality [@Harris2018] and reach . We will ensure our work is reproducible by including all relevant items from the CROSS survey checklist [@sharma2021consensus] and all relevant methods detail described by Harris et al. (2018) in publications. We will also use publicly available software to conduct data management and analyses and by share the data and statistical code used in all dissemination in a free open access repository such as GitHub [@Harris2018]. All manuscripts published will be Gold open access to improve equity of access to our findings [@papin2006other].
 
 ```{r echo = FALSE, results=FALSE}
 # linear regression
@@ -30,13 +30,3 @@ WebPower::wp.regression(p1 = 20, p2 = 0, n = 3000, alpha = .001,
   power = .999)
 
 ```
-
-### Power calculation
-
-For a linear regression model with 20 coefficients and 3,000 observations we have 80% power to detect a very small effect size of .005 and 95% power to detect a very small effect size of .01.[@cohen2013; @champely2020]
-
-### Data analysis plan
-
-#### Exploratory data analysis
-
-Given the novel nature of our project, we will conduct thorough exploratory data analysis (EDA) and visualization, with a particularly thorough focus on religious subgroups (e.g., Jewish religion, Islamic religion). EDA will include appropriate descriptive statistics for all variables of interest and additional bivariate descriptive statistics and visualization examining the distribution of outcome scale scores by religious affiliation and religious portrait variables. Based on these analyses, we may combine data from religious affiliation group that share similar outcome variable distributions. Once we have identified groups of religious affiliations, for each group we will conduct bivariate inferential tests for each outcome with each religious portrait variable. Given the large number of bivariate tests, we will set two criteria in order for a religious portrait variable to be retained for inclusion in the model: (1) alpha is less than .001, and (2) the effect size of the relationship is moderate or better. Those religious portrait variables that meet these two criteria will be included in the mediation and moderation modeling. For each religious affiliation group we will follow a model process that starts (Model 1) with a simple linear model including those religious portrait variables that meet the two criteria. For Model 2, we will add control demographic and socioeconomic characteristics (i.e., sex, education, income) and examine the change in the relationship of interest and in model fit. We will collect a minimum of 150 observations for each religious affiliation group in order to have ample power to test models 1 to 4 for any affiliation alone if needed. Using the Cohen's D cutoff of .20 as a small effect size and a conservative estimate of 20 coefficients in a model, we'd have 95% power with $\alpha$ of .05 at a sample size of 149 based on calculations using the `pwr` package in R version 4.1.1.
