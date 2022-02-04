@@ -8,25 +8,24 @@ bibliography: references.bib
 
 [text on creating the portrait scale vars here?]
 
-Our analysis plan follows five steps: (1) exploratory data analysis, (2) cluster analysis of religious portrait variables, (3) descriptive analysis of cluster members, (4) linear regression modeling of the relationships between clusters and five outcomes, (5) mediation analysis of trust in medicine in each regression model, and (6) moderation analysis of knowledge of genetics, age, and rural residence in each regression. With a sample size of approximately 3,000 we will have 99.9% power ($\alpha$ = .001) to detect a small effect size in a linear regression model with up to 20 coefficients [@webpower].
+Given the lack of prior research on this topic, we will start with thorough exploratory data analysis and visualization to understand the sample characteristics, including examining bivariate descriptive statistics for each portrait variable and each GGH activity within religious affiliation groups. Our second step will be to build linear regression models with each GGH activity as the outcome and portrait variables as the predictors of interest. To
+select the portrait variables for regression modeling, we will conduct bivariate analyses examining the relationship between each portrait variable and each GGH activity. The group of portrait variables significantly associated with a moderate or stronger relationship with a GGH activity will be checked for multicollinearity and any portrait variables exceeding the VIF threshold of 2.5 will be dropped.
 
-*Exploratory data analysis.* Given the lack of prior research on this topic, we will conduct thorough exploratory data analysis (EDA) and visualization including examining outcome and portrait variables by religious affiliation subgroups.
+Following portrait variable selection, we will build a linear regression model for each of the six GGH activities with the following steps: (1) enter control variables (age, gender, education, income, health), (2) enter portrait variables and examine change in model fit (Model 2), (3) test whether trust in the healthcare system mediates the portrait variables (Model 3), (4) determine whether knowledge of genetics and rural/suburban/urban status moderate the relationship between the religious portrait variables and the GGH activities (Model 4). If mediation was confirmed in Model 2, Model 3 will test a moderated mediation model. If we do not confirm mediation in Model 2, trust in medicine will remain in the model as a covariate while we test a moderation model for Model 3. (5) For any significant moderators, estimate stratified models. We will test model assumptions (linearity, no perfect multicollinearity,homoscedasticity, and independent and normally distributed residuals) and conduct model diagnostics to identify any outlying or influential values.
+
+For each model, model reporting will include overall model fit and significance along with coefficient values, direction, and significance. With a sample size of approximately 3,000 we will have more than 95% power ($\alpha$ = .05) to detect a small effect size in a linear regression model with up to 50 coefficients [@webpower]. Finally, we will conduct bivariate tests (e.g., Cramer's V) of the portrait variables entered into each GGH activity model within religious affiliation groups to determine whether there are differences in which portrait variables are associated with GGH by religious affiliation.
+
+Ensuring research results are reproducible and scientific information is freely available are two strategies to improve research quality [@Harris2018] and reach . We will ensure our work is reproducible by including all relevant items from the CROSS survey checklist [@sharma2021consensus] and all relevant methods detail described by Harris et al. (2018) in publications. We will also use publicly available software to conduct data management and analyses and by share the data and statistical code used in all dissemination in a free open access repository such as GitHub [@Harris2018]. All manuscripts published will be Gold open access to improve equity of access to our findings [@papin2006other].
+
+```{r echo = FALSE, results=FALSE}
+# linear regression
+WebPower::wp.regression(p1 = 50, p2 = 0, f2 = .02, alpha = .05,
+  power = .95)
+
+```
+
+scraps:
 
 *Cluster analysis and description.* We will examine relationships among the portrait variables using scatterplots and correlation coefficients to gain an understanding of possible clusters containing portrait variables that are strongly correlated. We will use *fuzzy clustering*, a version of cluster analysis that indicates cluster membership along a 0 to 1 continuum rather than giving an absolute group assignment for each observation [@ferraro2021].
 
 *Cluster descriptions.* Following DuBois et al. [@DuBois2019a] we will examine the demographic characteristics and religious affiliation of participants in each cluster to determine any patterns.
-
-*Regression modeling.* We will use cluster membership as the independent predictor in a linear regression model explaining each of the outcome variables (Model 1).
-
-*Testing mediation.* Model 2 will test whether trust in medicine mediates the relationship between the clusters and the outcome.
-
-*Testing moderation.* Model 3 will determine whether knowledge of genetics, age, and rurality moderate the relationship between the religious portrait variables and concern and support for genomics and genomic healthcare. If mediation is confirmed in Model 2, Model 3 will test a moderated mediation model. If we do not confirm mediation in Model 2, trust in medicine will remain in the model as a covariate while we test a moderation model for Model 3.
-
-*Reproducible research and open science.* Ensuring research results are reproducible and scientific information is freely available are two strategies to improve research quality [@Harris2018] and reach . We will ensure our work is reproducible by including all relevant items from the CROSS survey checklist [@sharma2021consensus] and all relevant methods detail described by Harris et al. (2018) in publications. We will also use publicly available software to conduct data management and analyses and by share the data and statistical code used in all dissemination in a free open access repository such as GitHub [@Harris2018]. All manuscripts published will be Gold open access to improve equity of access to our findings [@papin2006other].
-
-```{r echo = FALSE, results=FALSE}
-# linear regression
-WebPower::wp.regression(p1 = 100, p2 = 0, f2 = .02, alpha = .05,
-  power = .95)
-
-```
